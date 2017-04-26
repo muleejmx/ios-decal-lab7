@@ -14,6 +14,8 @@
 
 @end
 
+float currnumber;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -34,6 +36,7 @@
 
 - (IBAction)numberPressed:(id)sender {
     UIButton *pressedButton = (UIButton *)sender;
+    currnumber = [currnumber appendFormat:@"%d"]
     [_Cbrain updateCalculationStringFromButtonTag:(int)pressedButton.tag];
     [self updatecalculationView];
 }
