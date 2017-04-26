@@ -60,6 +60,10 @@
         _calculationString = [@"-" stringByAppendingString:_calculationString];
     }
 }
+- (void)newAction{
+    double input2 = [_calculationString doubleValue];
+    _calculationString = [NSString stringWithFormat:@"%.02f",tan(input2) * 100];
+}
 - (BOOL)hasDecimalPlaces: (double)operand1 _:(double)operand2 {
     if ((int)operand1 != operand1) {
         return true;

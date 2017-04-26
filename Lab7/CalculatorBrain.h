@@ -28,4 +28,5 @@ typedef enum actionType : long {
 - (void)tangentCalculationString;
 - (void)commitAction;
 - (BOOL)recognizeAction: (int)tag;
+- (void)newAction;
 @end

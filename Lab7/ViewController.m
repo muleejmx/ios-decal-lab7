@@ -68,4 +68,10 @@ float result;
     };
 }
 
+- (IBAction)newMethod:(id)sender {
+    [_Cbrain newAction];
+    [self updatecalculationView];
+    
+}
+
 @end

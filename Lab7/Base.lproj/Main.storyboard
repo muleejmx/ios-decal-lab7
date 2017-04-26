@@ -71,6 +71,9 @@
                                 <state key="normal">
                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <connections>
+                                    <action selector="newMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HME-6p-r0S"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFK-bO-Rlj">
                                 <rect key="frame" x="0.0" y="261.5" width="94" height="101"/>
