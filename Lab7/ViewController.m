@@ -36,19 +36,23 @@
 }
 
 float currnumber;
+float result;
 
 - (IBAction)numberPressed:(id)sender {
     UIButton *pressedButton = (UIButton *)sender;
-    currnumber = currnumber *10 + (float)[sender tag];
-    _Cbrain.calculationString = [NSString stringWithFormat:@"%.1f", currnumber];
+    currnumber = currnumber *10 + (float)[sender tag] - (float)[sender tag];
+    _Cbrain.calculationString = [NSString stringWithFormat:@"%.0f", currnumber];
     [_Cbrain updateCalculationStringFromButtonTag:(int)pressedButton.tag];
     [self updatecalculationView];
 }
 - (IBAction)clearPressed:(id)sender {
+    currnumber = 0.0;
+    _Cbrain.calculationString = [NSString stringWithFormat:@"%.1f", 0.0];
     [_Cbrain clearCalculationString];
     [self updatecalculationView];
 }
 - (IBAction)plusMinusPressed:(id)sender {
+    
     [_Cbrain negateCalculationString];
     [self updatecalculationView];
 }
