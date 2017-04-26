@@ -12,9 +12,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *calculationView;
 @property CalculatorBrain *Cbrain;
 
+
 @end
 
-float currnumber;
 
 @implementation ViewController
 
@@ -22,6 +22,7 @@ float currnumber;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _Cbrain = [[CalculatorBrain alloc] init];
+
 }
 
 
@@ -34,9 +35,12 @@ float currnumber;
     [_calculationView setText:[_Cbrain calculationString]];
 }
 
+float currnumber;
+
 - (IBAction)numberPressed:(id)sender {
     UIButton *pressedButton = (UIButton *)sender;
-    currnumber = [currnumber appendFormat:@"%d"]
+    currnumber = currnumber *10 + (float)[sender tag];
+    _Cbrain.calculationString = [NSString stringWithFormat:@"%.1f", currnumber];
     [_Cbrain updateCalculationStringFromButtonTag:(int)pressedButton.tag];
     [self updatecalculationView];
 }
